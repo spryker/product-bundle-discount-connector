@@ -22,9 +22,6 @@ use Spryker\Zed\ProductBundleDiscountConnector\ProductBundleDiscountConnectorDep
  */
 class ProductBundleDiscountConnectorBusinessFactory extends AbstractBusinessFactory
 {
-    /**
-     * @return \Spryker\Zed\ProductBundleDiscountConnector\Business\Expander\BundledProductDiscountableItemCollectionExpanderInterface
-     */
     public function createProductAttributeDiscountableItemsCollectionExpander(): BundledProductDiscountableItemCollectionExpanderInterface
     {
         return new BundledProductDiscountableItemCollectionExpander(
@@ -32,9 +29,6 @@ class ProductBundleDiscountConnectorBusinessFactory extends AbstractBusinessFact
         );
     }
 
-    /**
-     * @return \Spryker\Zed\ProductBundleDiscountConnector\Business\DecisionRule\ProductBundleAttributeDecisionRuleInterface
-     */
     public function createProductBundleAttributeDecisionRule(): ProductBundleAttributeDecisionRuleInterface
     {
         return new ProductBundleAttributeDecisionRule(
@@ -44,25 +38,16 @@ class ProductBundleDiscountConnectorBusinessFactory extends AbstractBusinessFact
         );
     }
 
-    /**
-     * @return \Spryker\Zed\ProductBundleDiscountConnector\Dependency\Facade\ProductBundleDiscountConnectorToProductFacadeInterface
-     */
     public function getProductFacade(): ProductBundleDiscountConnectorToProductFacadeInterface
     {
         return $this->getProvidedDependency(ProductBundleDiscountConnectorDependencyProvider::FACADE_PRODUCT);
     }
 
-    /**
-     * @return \Spryker\Zed\ProductBundleDiscountConnector\Dependency\Facade\ProductBundleDiscountConnectorToLocaleFacadeInterface
-     */
     public function getLocaleFacade(): ProductBundleDiscountConnectorToLocaleFacadeInterface
     {
         return $this->getProvidedDependency(ProductBundleDiscountConnectorDependencyProvider::FACADE_LOCALE);
     }
 
-    /**
-     * @return \Spryker\Zed\ProductBundleDiscountConnector\Dependency\Facade\ProductBundleDiscountConnectorToDiscountFacadeInterface
-     */
     public function getDiscountFacade(): ProductBundleDiscountConnectorToDiscountFacadeInterface
     {
         return $this->getProvidedDependency(ProductBundleDiscountConnectorDependencyProvider::FACADE_DISCOUNT);

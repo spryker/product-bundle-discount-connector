@@ -38,13 +38,6 @@ class ProductBundleDiscountConnectorBusinessTester extends Actor
      */
     protected const TYPE_STRING = 'string';
 
-    /**
-     * @param string $attributeKey
-     * @param string $attributeValue
-     * @param string $operator
-     *
-     * @return \Generated\Shared\Transfer\ClauseTransfer
-     */
     public function createClauseTransfer(string $attributeKey, string $attributeValue, string $operator = '='): ClauseTransfer
     {
         return (new ClauseTransfer())->setOperator($operator)

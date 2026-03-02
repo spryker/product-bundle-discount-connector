@@ -27,9 +27,6 @@ class BundledProductDiscountableItemCollectionExpander implements BundledProduct
      */
     protected $productBundleAttributeDecisionRule;
 
-    /**
-     * @param \Spryker\Zed\ProductBundleDiscountConnector\Business\DecisionRule\ProductBundleAttributeDecisionRuleInterface $productBundleAttributeDecisionRule
-     */
     public function __construct(ProductBundleAttributeDecisionRuleInterface $productBundleAttributeDecisionRule)
     {
         $this->productBundleAttributeDecisionRule = $productBundleAttributeDecisionRule;
@@ -76,12 +73,6 @@ class BundledProductDiscountableItemCollectionExpander implements BundledProduct
         return $discountableItems;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ItemTransfer $itemTransfer
-     * @param string $priceMode
-     *
-     * @return \Generated\Shared\Transfer\DiscountableItemTransfer
-     */
     protected function createDiscountableItemTransfer(ItemTransfer $itemTransfer, string $priceMode): DiscountableItemTransfer
     {
         $price = $this->getPrice($itemTransfer, $priceMode);
@@ -93,12 +84,6 @@ class BundledProductDiscountableItemCollectionExpander implements BundledProduct
             ->setOriginalItem($itemTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ItemTransfer $itemTransfer
-     * @param string $priceMode
-     *
-     * @return int
-     */
     protected function getPrice(ItemTransfer $itemTransfer, string $priceMode): int
     {
         if ($priceMode === static::PRICE_MODE_NET) {

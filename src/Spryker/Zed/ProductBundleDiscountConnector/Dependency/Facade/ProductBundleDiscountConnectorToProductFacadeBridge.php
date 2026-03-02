@@ -25,12 +25,6 @@ class ProductBundleDiscountConnectorToProductFacadeBridge implements ProductBund
         $this->productFacade = $productFacade;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ProductConcreteTransfer $productConcreteTransfer
-     * @param \Generated\Shared\Transfer\LocaleTransfer|null $localeTransfer
-     *
-     * @return array
-     */
     public function getCombinedConcreteAttributes(ProductConcreteTransfer $productConcreteTransfer, ?LocaleTransfer $localeTransfer = null): array
     {
         return $this->productFacade->getCombinedConcreteAttributes($productConcreteTransfer, $localeTransfer);

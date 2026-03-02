@@ -32,11 +32,6 @@ class ProductBundleAttributeDecisionRule implements ProductBundleAttributeDecisi
      */
     protected $productFacade;
 
-    /**
-     * @param \Spryker\Zed\ProductBundleDiscountConnector\Dependency\Facade\ProductBundleDiscountConnectorToDiscountFacadeInterface $discountFacade
-     * @param \Spryker\Zed\ProductBundleDiscountConnector\Dependency\Facade\ProductBundleDiscountConnectorToLocaleFacadeInterface $localeFacade
-     * @param \Spryker\Zed\ProductBundleDiscountConnector\Dependency\Facade\ProductBundleDiscountConnectorToProductFacadeInterface $productFacade
-     */
     public function __construct(
         ProductBundleDiscountConnectorToDiscountFacadeInterface $discountFacade,
         ProductBundleDiscountConnectorToLocaleFacadeInterface $localeFacade,
@@ -47,13 +42,6 @@ class ProductBundleAttributeDecisionRule implements ProductBundleAttributeDecisi
         $this->productFacade = $productFacade;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     * @param \Generated\Shared\Transfer\ItemTransfer $currentItemTransfer
-     * @param \Generated\Shared\Transfer\ClauseTransfer $clauseTransfer
-     *
-     * @return bool
-     */
     public function isSatisfiedBy(
         QuoteTransfer $quoteTransfer,
         ItemTransfer $currentItemTransfer,
@@ -96,11 +84,6 @@ class ProductBundleAttributeDecisionRule implements ProductBundleAttributeDecisi
         return false;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ItemTransfer $currentItemTransfer
-     *
-     * @return \Generated\Shared\Transfer\ProductConcreteTransfer
-     */
     protected function createProductConcreteTransfer(ItemTransfer $currentItemTransfer): ProductConcreteTransfer
     {
         $productConcreteTransfer = new ProductConcreteTransfer();

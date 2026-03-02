@@ -47,9 +47,6 @@ class ProductBundleDiscountConnectorFacadeTest extends Unit
      */
     protected $tester;
 
-    /**
-     * @return void
-     */
     public function testExpandProductAttributeDiscountableItemsCollectionWillAddBundledItemsToCollection(): void
     {
         // Arrange
@@ -73,9 +70,6 @@ class ProductBundleDiscountConnectorFacadeTest extends Unit
         $this->assertCount(3, $discountableItems);
     }
 
-    /**
-     * @return void
-     */
     public function testExpandProductAttributeDiscountableItemsCollectionWillNotAddBundledItemsToCollection(): void
     {
         // Arrange
@@ -99,11 +93,6 @@ class ProductBundleDiscountConnectorFacadeTest extends Unit
         $this->assertCount(0, $discountableItems);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ProductConcreteTransfer $productBundleTransfer
-     *
-     * @return \Generated\Shared\Transfer\QuoteTransfer
-     */
     protected function createQuoteWithProductBundleItems(ProductConcreteTransfer $productBundleTransfer): QuoteTransfer
     {
         $quoteTransfer = (new QuoteTransfer())->setPriceMode(static::PRICE_MODE_GROSS);
